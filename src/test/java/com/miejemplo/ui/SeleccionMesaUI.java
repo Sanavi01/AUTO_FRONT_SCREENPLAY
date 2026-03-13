@@ -8,5 +8,5 @@ public class SeleccionMesaUI {
             .locatedBy("h1");
 
     public static final Target MESA = Target.the("Mesa número {0}")
-            .locatedBy("//button[contains(text(),'{0}')]");
+                    .locatedBy("//button[starts-with(normalize-space(.),'{0}')]");
 }

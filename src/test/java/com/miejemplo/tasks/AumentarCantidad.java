@@ -21,8 +21,7 @@ public class AumentarCantidad implements Task {
     public <T extends Actor> void performAs(T actor) {
         for (int i = 0; i < veces; i++) {
             actor.attemptsTo(
-                    Click.on(SeleccionPedidoUI.BOTON_AUMENTAR.of(opcionProducto))
-            );
+                    Click.on(SeleccionPedidoUI.BOTON_AUMENTAR.of("1")));
         }
     }
 

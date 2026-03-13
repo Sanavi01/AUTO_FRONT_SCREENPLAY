@@ -5,13 +5,15 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-public class PedidoConfirmado implements Question<Boolean> {
+public class PedidoConfirmado implements Question<String> {
 
     @Override
-    public Boolean answeredBy(Actor actor) {
+    public String answeredBy(Actor actor) {
+        ConfirmacionUI.CONFIRMACION_TITULO
+                .resolveFor(actor)
+                .waitUntilVisible();
         return Text.of(ConfirmacionUI.CONFIRMACION_TITULO)
-                .answeredBy(actor)
-                .equalsIgnoreCase("Pedido confirmado");
+                .answeredBy(actor);
     }
 
     public static PedidoConfirmado enPantalla() {
